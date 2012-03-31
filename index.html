@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head></head>
+<head>
+  <title>League of Legends | Ultimate Bravery</title>
+  <link rel="stylesheet" type="text/javascript" href="styles.css"/>  
+</head>
 <body>
-  <h1>Ultimate Bravery</h1>
-  <div class="generator">
-    <div class="champion">
-      <img src="#" alt="name"/><span>Champion's Name</span>
+  <div class="controls">
+    <div class="title">Ultimate Bravery</div>
+    <button onclick=Game.init()>Redraw</button>
+  </div>
+  <div class="card">
+    <div class="champion type" data-howmany="1">
+      <div class="stat" data-type="1"><img src="#" alt="name"/><span></span></div>
     </div>
-    <div class="spells">
-      <div class="one"><img src="#" alt="name"/><span>spell one</span></div>
-      <div class="two"><img src="#" alt="name"/><span>spell one</span></div>
+    <div class="spells type" data-howmany="2">
+      <h4>Summoner Spells</h4>
+      <div class="stat" data-type="1"><img src="#" alt="name"/><span></span></div>
+      <div class="stat" data-type="2"><img src="#" alt="name"/><span></span></div>
+      <div class="ability type"data-howmany="1">
+        <div class="stat" data-type="1"><span></span><h4>Max Ability</h4></div>
+      </div>
     </div>
-    <div class="items">
-      <div class="one"><img src="#" alt="name"/><span>spell one</span></div>
-      <div class="one"><img src="#" alt="name"/><span>spell one</span></div>
-      <div class="one"><img src="#" alt="name"/><span>spell one</span></div>
-      <div class="one"><img src="#" alt="name"/><span>spell one</span></div>
-      <div class="one"><img src="#" alt="name"/><span>spell one</span></div>
+    <div class="boots type" data-howmany="1">
+      <h4>Boots</h4>
+      <div class="stat" data-type="1"><img src="#" alt="name"/><span></span></div>
     </div>
-    <div class="ability">#</div>
+    <div class="items type" data-howmany="5">
+      <h4>Build Order</h4>
+      <div class="stat" data-type="1"><img src="#" alt="name"/><span></span></div>
+      <div class="stat" data-type="2"><img src="#" alt="name"/><span></span></div>
+      <div class="stat" data-type="3"><img src="#" alt="name"/><span></span></div>
+      <div class="stat" data-type="4"><img src="#" alt="name"/><span></span></div>
+      <div class="stat" data-type="5"><img src="#" alt="name"/><span></span></div>
+    </div>
+    
   </div>
   
   <!--SCRIPTS-->
   <script type="text/javascript"src="jquery.js"></script>
   <script type="text/javascript"src="script.js"></script>
   <script type="text/javascript">
-    UltimateBravery.init();
+    Game.init();
   </script>
 
 </html>
