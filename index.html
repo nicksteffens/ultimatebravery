@@ -2,7 +2,8 @@
 <html>
 <head>
   <title>League of Legends | Ultimate Bravery</title>
-  <link rel="stylesheet" type="text/javascript" href="styles.css"/>  
+  <link href="stylesheets/styles.css" media="screen" rel="stylesheet"  type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
   <div class="content">
@@ -49,6 +50,10 @@
   <script type="text/javascript"src="jquery.js"></script>
   <script type="text/javascript"src="script.js"></script>
   <script type="text/javascript">
+    var mobile = (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+    if (mobile ) {
+      $('body').addClass('mobile');
+    }
     Game.init();
   </script>
 

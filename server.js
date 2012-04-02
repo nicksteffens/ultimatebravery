@@ -1,6 +1,7 @@
+
 var http = require('http');
-var path = require('path');
 var fs = require('fs');
+var path = require('path');
  
 http.createServer(function (request, response) {
  
@@ -9,6 +10,17 @@ http.createServer(function (request, response) {
     var filePath = '.' + request.url;
     if (filePath == './')
         filePath = './index.html';
+         
+    var extname = path.extname(filePath);
+    var contentType = 'text/html';
+    switch (extname) {
+        case '.js':
+            contentType = 'text/javascript';
+            break;
+        case '.css':
+            contentType = 'text/css';
+            break;
+    }
      
     path.exists(filePath, function(exists) {
      
@@ -19,7 +31,7 @@ http.createServer(function (request, response) {
                     response.end();
                 }
                 else {
-                    response.writeHead(200, { 'Content-Type': 'text/html' });
+                    response.writeHead(200, { 'Content-Type': contentType });
                     response.end(content, 'utf-8');
                 }
             });
@@ -30,6 +42,6 @@ http.createServer(function (request, response) {
         }
     });
      
-}).listen(3000, '127.0.0.1');
+}).listen(3000);
  
 console.log('Server running at http://127.0.0.1:3000/');
