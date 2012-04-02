@@ -1,4 +1,4 @@
-
+var Errors = [];
 Info = {
    champion: {
      section: 'champion',
@@ -38,6 +38,8 @@ Game = {
   },
   
   drawNewCard: function(obj) {
+    var card = new Object();
+    // console.log('New Card')
     $.each(obj, function(idx, value){
       var arr = value.arr,
           section = value.section, 
@@ -49,114 +51,52 @@ Game = {
       // images      
       for(i=1;i<=numberOf;i++) {
         var path = Utility.selectRandom(arr);
-        if($.inArray(path, paths) > -1) {
-          // console.log('repeated item');
-          path = Utility.selectRandom(arr);
-          
-        } else {
-          paths.push(path);
-        
+        initErrorCheck()
+        // repeat/undefined check
+        function initErrorCheck()
+        {
+          if($.inArray(path, paths) > -1) {
+            path = Utility.selectRandom(arr);
+            initErrorCheck();
+            // console.log('repeat!');
+          } else if (path == undefined) {
+            path = Utility.selectRandom(arr);
+            initErrorCheck();
+            // console.log('undefined!');
+          }
         }
+        paths.push(path);
+        
       };
-          
+      // console.log(paths);
       //  names
       for(i=0;i<=paths.length-1;i++) {
         names.push(paths[i]);
       }
-          
-      if(section != 'ability') Render.renderImages(paths, section);
-      Render.renderNames(names, section);
-      // console.log('ran '+section+' %o', new Date().getMilliseconds());    
+      var newSection = section;
+      
+      switch(newSection)
+      {
+        case 'ability':
+          card.ability = names;
+        break;
+        case 'champion':
+          card.champion = names;
+        break;
+        case 'boots':
+          card.boots = names;
+        break;
+        case 'spells':
+          card.spells = names;
+        break;
+        case 'items':
+          card.items = names;
+        break;
+      }     
     });
-    
-    Game.checkForBlanks();
-  },
-  
-  drawNewStat: function(obj) {
-    // console.log('drawing new stat for %o obj = %o', obj.section, obj);
-    var arr = obj.arr,
-        section = obj.section, 
-        numberOf = obj.numberOf;
-     
-    var paths = [],
-        names = []; 
-    
-        
-    // images      
-    for(i=1;i<=numberOf;i++) {
-      var path = Utility.selectRandom(arr);
-      if($.inArray(path, paths) > -1) {
-        // console.log('repeated item');
-        path = Utility.selectRandom(arr);
-        
-      } else {
-        paths.push(path);
-      
-      }
-    };
-        
-    //  names
-    for(i=0;i<=paths.length-1;i++) {
-      names.push(paths[i]);
-    }
-        
-    if(section != 'ability') Render.renderImages(paths, section);
-    Render.renderNames(names, section);
-    Game.checkForBlanks();
-  },
-  
-  checkForBlanks: function() {
-    $('.type').each(function(){
-      var section = $(this).attr('class').slice(0, -5),
-          actually = $(this).find('.stat').children('span').length,
-          supposed = $(this).attr('data-howmany'),
-          error;
-          
-      // image check
-      $(this).find('img').each(function(){
-        var src = $(this).attr('src');
-        if(src.indexOf('undef') > -1) {
-          error = true;
-          // console.log('%o undefined', $(this));
-        }
-      });
-      
-      // title check
-      $(this).find('span').each(function(){
-        var text = $(this).text();
-        if(text.indexOf('undef') > -1) {
-          error = true;
-          // console.log('%o undefined', $(this));
-        }
-      });
-      if(actually != supposed || error ) {
-        
-        // clear out garbage
-        $(this).find('span').remove();
-        $(this).find('img').remove();
-        var getNewStat = section;
-        switch(getNewStat)
-        {
-          case 'champion':
-            Game.drawNewStat(Info.champion);
-          break;
-          case 'spells':
-            Game.drawNewStat(Info.spells);
-          break;
-          case 'boots':
-            Game.drawNewStat(Info.boots);
-          break;
-          case 'items':
-            Game.drawNewStat(Info.items);
-          break;
-          case 'ability':
-            Game.drawNewStat(Info.ability);
-          break;
-        }
-      }
-      
-    });
-  }
+    Render.renderCard(card);
+    // Game.checkForBlanks();
+  } 
 }
 
 Utility = {
@@ -179,6 +119,28 @@ Utility = {
         $(this).text(name);
       }
     });
+  },
+  checkForBlanks: function(obj) {
+    // obj vars
+    var champion = obj.champion,
+        spells = obj.spells,
+        ability = obj.ability,
+        boots = obj.boots,
+        items = obj.items,
+        error = false;
+        
+    // check vars
+    var card = {'champion':champion, 'spells':spells, 'ability':ability, 'boots':boots, 'items':items};
+    $.each(card, function(idx, value) {
+      var parent = idx;
+      $.each(value, function(idx, value){
+        if(value == undefined) {
+         error = true;
+        }
+      });
+    });
+    return error;
+    
   }
 }
 
@@ -203,10 +165,30 @@ Render = {
     var rent = $('.'+type);
     for(i=0;i<=arr.length-1;i++)
     {
-        rent.find('[data-type]:nth('+i+')').append('<span class="'+type+'">'+arr[i]+'</span>');
+      rent.find('[data-type]:nth('+i+')').append('<span class="'+type+'">'+arr[i]+'</span>');
     }
     if(type != 'ability') Utility.cleanNames(type);
     // console.log('render name Complete');
+  },
+  
+  // renders out card
+  renderCard: function(obj) {
+    var champion = obj.champion,
+        spells = obj.spells,
+        ability = obj.ability,
+        boots = obj.boots,
+        items = obj.items;
+
+    var error = Utility.checkForBlanks(obj);
+    
+    if(error != true) {
+      $.each(obj, function(idx, value){
+        Render.renderNames(value, idx);
+        if(idx != 'ability')Render.renderImages(value, idx);
+      });
+    } else {
+      Game.drawNewCard(Info);
+    }
   }
   
 }
