@@ -33,7 +33,7 @@ Game = {
   init: function() {
     $('img').remove();
     $('span').remove();
-    // $('.card').hide();
+    $('.card').hide();
     Game.drawNewCard(Info);
   },
   
@@ -185,6 +185,7 @@ Render = {
       $.each(obj, function(idx, value){
         if(idx != 'ability')Render.renderImages(value, idx);
         Render.renderNames(value, idx);
+        $('.card').fadeIn(500);
       });
     } else {
       Game.drawNewCard(Info);

@@ -12,6 +12,8 @@ span {
   display:inline-block;
   margin-left:5px;
 }
+a, a:visited {color:#999; text-decoration:none;}
+a:hover {text-decoration:underline;}
 
 h4 {
   font-family:friz;
@@ -37,19 +39,25 @@ h4 {
   }
  .title p {
    color:#ccc;
-   font-size:16px;
+   font-size:14px;
    font-weight:lighter;
-   font-family:'Times New Roman';
+   font-family:'arial';
  }
  
  .controls {
    display:block;
-   
+ }
+ p.copyright {
+   color:#999;
+   font-size:10px;
+   font-style:italic;
+   font-family:arial;
  }
 .card {
   width:330px;
   top:0;
   position:absolute;
+  display:none;
 }
 .card {
   background:#666;
@@ -118,6 +126,7 @@ div.ability {
     position:absolute;
     width:40px;
     height:100%;
+    top:0;
     right:0;
     border-left:3px solid #000;
 
