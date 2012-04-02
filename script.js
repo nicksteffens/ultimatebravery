@@ -183,8 +183,8 @@ Render = {
     
     if(error != true) {
       $.each(obj, function(idx, value){
-        Render.renderNames(value, idx);
         if(idx != 'ability')Render.renderImages(value, idx);
+        Render.renderNames(value, idx);
       });
     } else {
       Game.drawNewCard(Info);
