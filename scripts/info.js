@@ -2,8 +2,15 @@ info = {
     "url_paths": {
       "host": "http://na.leagueoflegends.com/sites/default/files/game_data/",
       "game_data": "1.0.0.146",
-      "icons": "icons",
-      "portraits": "portraits"
+      "champions": {
+        "directory": "content/champion",
+        "icons": "icons",
+        "portraits": "portraits"
+      },
+      "items": {
+        "directory": "content/item/"
+      }
+
     },
     "champions": [
         {
@@ -422,5 +429,390 @@ info = {
           "number": 143,
           "name": "zyra"
         }
+    ],
+    // Items Object ripped from:
+    // http://na.leagueoflegends.com/items
+    // as of 2012-10-22
+    items: [
+      {
+        "number":3001,
+        "name":"Abyssal Scepter"
+      },
+      {
+        "number":3105,
+        "name":"Aegis of the Legion"
+      },
+      {
+        "number":3003,
+        "name":"Archangel's Staff"
+      },
+      {
+        "number":3174,
+        "name":"Athene's Unholy Grail"
+      },
+      {
+        "number":3005,
+        "name":"Atma's Impaler"
+      },
+      {
+        "number":3198,
+        "name":"Augment: Death"
+      },
+      {
+        "number":3197,
+        "name":"Augment: Gravity"
+      },
+      {
+        "number":3196,
+        "name":"Augment: Power"
+      },
+      {
+        "number":3093,
+        "name":"Avarice Blade"
+      },
+      {
+        "number":3102,
+        "name":"Banshee's Veil"
+      },
+      {
+        "number":3006,
+        "name":"Berserker's Greaves"
+      },
+      {
+        "number":3144,
+        "name":"Bilgewater Cutlass"
+      },
+      {
+        "number":3166,
+        "name":"Bonetooth Necklace"
+      },
+      {
+        "number":3117,
+        "name":"Boots of Mobility"
+      },
+      {
+        "number":3009,
+        "name":"Boots of Swiftness"
+      },
+      {
+        "number":3010,
+        "name":"Catalyst the Protector"
+      },
+      {
+        "number":3028,
+        "name":"Chalice of Harmony"
+      },
+      {
+        "number":3172,
+        "name":"Cloak and Dagger"
+      },
+      {
+        "number":3128,
+        "name":"Deathfire Grasp"
+      },
+      {
+        "number":3173,
+        "name":"Eleisa's Miracle"
+      },
+      {
+        "number":3097,
+        "name":"Emblem of Valor"
+      },
+      {
+        "number":3184,
+        "name":"Entropy"
+      },
+      {
+        "number":3123,
+        "name":"Executioner's Calling"
+      },
+      {
+        "number":3108,
+        "name":"Fiendish Codex"
+      },
+      {
+        "number":3109,
+        "name":"Force of Nature"
+      },
+      {
+        "number":3110,
+        "name":"Frozen Heart"
+      },
+      {
+        "number":3022,
+        "name":"Frozen Mallet"
+      },
+      {
+        "number":3024,
+        "name":"Glacial Shroud"
+      },
+      {
+        "number":3026,
+        "name":"Guardian Angel"
+      },
+      {
+        "number":3124,
+        "name":"Guinsoo's Rageblade"
+      },
+      {
+        "number":3136,
+        "name":"Haunting Guise"
+      },
+      {
+        "number":3132,
+        "name":"Heart of Gold"
+      },
+      {
+        "number":3155,
+        "name":"Hexdrinker"
+      },
+      {
+        "number":3146,
+        "name":"Hextech Gunblade"
+      },
+      {
+        "number":3145,
+        "name":"Hextech Revolver"
+      },
+      {
+        "number":3187,
+        "name":"Hextech Sweeper"
+      },
+      {
+        "number":3031,
+        "name":"Infinity Edge"
+      },
+      {
+        "number":3158,
+        "name":"Ionian Boots of Lucidity"
+      },
+      {
+        "number":3178,
+        "name":"Ionic Spark"
+      },
+      {
+        "number":3098,
+        "name":"Kage's Lucky Pick"
+      },
+      {
+        "number":3067,
+        "name":"Kindlegem"
+      },
+      {
+        "number":3186,
+        "name":"Kitae's Bloodrazor"
+      },
+      {
+        "number":3035,
+        "name":"Last Whisper"
+      },
+      {
+        "number":3138,
+        "name":"Leviathan"
+      },
+      {
+        "number":3100,
+        "name":"Lich Bane"
+      },
+      {
+        "number":3190,
+        "name":"Locket of the Iron Solari"
+      },
+      {
+        "number":3126,
+        "name":"Madred's Bloodrazor"
+      },
+      {
+        "number":3106,
+        "name":"Madred's Razors"
+      },
+      {
+        "number":3114,
+        "name":"Malady"
+      },
+      {
+        "number":3037,
+        "name":"Mana Manipulator"
+      },
+      {
+        "number":3004,
+        "name":"Manamune"
+      },
+      {
+        "number":3156,
+        "name":"Maw of Malmortius"
+      },
+      {
+        "number":3041,
+        "name":"Mejai's Soulstealer"
+      },
+      {
+        "number":3111,
+        "name":"Mercury's Treads"
+      },
+      {
+        "number":3170,
+        "name":"Moonflair Spellblade"
+      },
+      {
+        "number":3165,
+        "name":"Morello's Evil Tome"
+      },
+      {
+        "number":3115,
+        "name":"Nashor's Tooth"
+      },
+      {
+        "number":3047,
+        "name":"Ninja Tabi"
+      },
+      {
+        "number":3180,
+        "name":"Odyn's Veil"
+      },
+      {
+        "number":3044,
+        "name":"Phage"
+      },
+      {
+        "number":3046,
+        "name":"Phantom Dancer"
+      },
+      {
+        "number":3096,
+        "name":"Philosopher's Stone"
+      },
+      {
+        "number":3140,
+        "name":"Quicksilver Sash"
+      },
+      {
+        "number":3089,
+        "name":"Rabadon's Deathcap"
+      },
+      {
+        "number":3143,
+        "name":"Randuin's Omen"
+      },
+      {
+        "number":3027,
+        "name":"Rod of Ages"
+      },
+      {
+        "number":3116,
+        "name":"Rylai's Crystal Scepter"
+      },
+      {
+        "number":3181,
+        "name":"Sanguine Blade"
+      },
+      {
+        "number":3057,
+        "name":"Sheen"
+      },
+      {
+        "number":3069,
+        "name":"Shurelya's Reverie"
+      },
+      {
+        "number":3020,
+        "name":"Sorcerer's Shoes"
+      },
+      {
+        "number":3099,
+        "name":"Soul Shroud"
+      },
+      {
+        "number":3065,
+        "name":"Spirit Visage"
+      },
+      {
+        "number":3101,
+        "name":"Stinger"
+      },
+      {
+        "number":3068,
+        "name":"Sunfire Cape"
+      },
+      {
+        "number":3141,
+        "name":"Sword of the Occult"
+      },
+      {
+        "number":3070,
+        "name":"Tear of the Goddess"
+      },
+      {
+        "number":3071,
+        "name":"The Black Cleaver"
+      },
+      {
+        "number":3072,
+        "name":"The Bloodthirster"
+      },
+      {
+        "number":3134,
+        "name":"The Brutalizer"
+      },
+      {
+        "number":3200,
+        "name":"The Hex Core"
+      },
+      {
+        "number":3185,
+        "name":"The Lightbringer"
+      },
+      {
+        "number":3075,
+        "name":"Thornmail"
+      },
+      {
+        "number":3077,
+        "name":"Tiamat"
+      },
+      {
+        "number":3078,
+        "name":"Trinity Force"
+      },
+      {
+        "number":3135,
+        "name":"Void Staff"
+      },
+      {
+        "number":3082,
+        "name":"Warden's Mail"
+      },
+      {
+        "number":3083,
+        "name":"Warmog's Armor"
+      },
+      {
+        "number":3152,
+        "name":"Will of the Ancients"
+      },
+      {
+        "number":3091,
+        "name":"Wit's End"
+      },
+      {
+        "number":3154,
+        "name":"Wriggle's Lantern"
+      },
+      {
+        "number":3142,
+        "name":"Youmuu's Ghostblade"
+      },
+      {
+        "number":3086,
+        "name":"Zeal"
+      },
+      {
+        "number":3050,
+        "name":"Zeke's Herald"
+      },
+      {
+        "number":3157,
+        "name":"Zhonya's Hourglass"
+      }
     ]
 };
