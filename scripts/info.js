@@ -1,7 +1,7 @@
 info = {
     url_paths: {
       host: "http://na.leagueoflegends.com/sites/default/files/game_data/",
-      game_data: "1.0.0.146/w",
+      game_data: "1.0.0.146/",
       champions: {
         directory: "content/champion/",
         icons: "icons/",
@@ -9,6 +9,12 @@ info = {
       },
       items: {
         directory: "content/item/"
+      },
+      boots: {
+        directory: "content/item/"
+      },
+      spells: {
+        directory: ""
       }
 
     },
@@ -76,7 +82,7 @@ info = {
         },
         {
           number: 36,
-          name: "dr"
+          name: "dr. mundo"
         },
         {
           number: 119,
@@ -830,5 +836,9 @@ info = {
         number:3020,
         name:"Sorcerer's Shoes"
       }
+  ],
+
+  spells: [
+    "revive", "smite", "exhaust", "teleport", "ghost", "heal", "surge", "cleanse", "clarity", "ignite", "promote", "clairvoyance", "flash"
   ]
 };
