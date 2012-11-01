@@ -10,40 +10,41 @@ Controller = {
     Controller.drawCard = $('#fetchBravery');
     Controller.objects = {
       champion: {
-        element: $('#champion'),
-        image_element: $('#champion-image'),
+        element: '#champion',
+        image_element: '#champion-image',
         arry: info.champions,
         url_info: info.url_paths.champions,
         howMany: 1
       },
       spells: {
-        element: $('#spells'),
+        element: '#spells',
         arry: info.spells,
         url_info: info.url_paths.spells,
         howMany: 2
       },
       boots: {
-        element: $('#boots'),
+        element: '#boots',
         arry: info.boots,
         url_info: info.url_paths.boots,
         howMany: 1
       },
       items: {
-        element: $('#items'),
+        element: '#items',
         arry: info.items,
         url_info: info.url_paths.items,
         howMany: 5
       }
     };
+
     // start game
     Controller.fetchBravery(Controller.drawCard);
   },
 
-  // sets listeners
+  // sets listener
   fetchBravery: function(evnt) {
     evnt.click(function(){
       $.each(Controller.objects, function(){
-        Utility.checkforMultiple(this);
+        Utility.collectInfo(this);
       });
     });
   }
@@ -52,10 +53,13 @@ Controller = {
 
 // View for UltimateBravery
 View = {
-  // prints info and images and object
-  printInfo: function(element, title, path) {
-    element.children('.media-body').children('.media-heading').empty().text(title);
-    element.children('.media-body').children('.media-image').empty().text(path);
+  // reworking how it print info
+  printInfoArry: function(arry, element) {
+    $.each(arry, function(idx){
+      console.log('printing %o', this, idx, $(element).eq(idx));
+      $(element + ' .media-body').eq(idx).children('.media-heading').empty().text(this.name);
+      if (element !== '') $(element + ' .media-body').eq(idx).children('.media-image').empty().text(this.path);
+    });
   }
 
 };
@@ -68,57 +72,47 @@ Utility = {
     return chosen;
   },
 
-  // collects information on an object for single return
-  collectInfo: function(obj) {
-    var selected = Utility.selectRandom(obj.arry);
-    var imagePath = Utility.grabImage(obj.url_info, selected.number, obj.url_info.portraits);
-
-    View.printInfo(obj.element, selected.name, imagePath);
-
-  },
-
-  // checks how much information to collect for an object
-  checkforMultiple: function(obj) {
-    if(obj.howMany > 1) {
-      Utility.collectMultiple(obj);
-    } else {
-      Utility.collectInfo(obj);
-    }
-  },
-
   // collects information on an object with multiple returns
-  collectMultiple: function(obj) {
-    var items = [];
+  collectInfo: function(obj) {
+    // reset vars
+    var items = [],
+        selected = null,
+        item = null;
+
     // check if object is spells
     if(obj.arry == info.spells) {
-      // console.log('collected spells');
-
-    } else {
-      // collects information
       for(var i = 0; i < obj.howMany; i++) {
-
-        // TODO:
-        // Goal: Break this into is own Utility function so it can be refereneced in multiple functions and checks
-        // 1. utilize collectInfo function above to achieve listed goal
-
-        var selected = Utility.selectRandom(obj.arry);
-        var imagePath = Utility.grabImage(obj.url_info, selected.number, obj.url_info.portraits);
-        var item = {
-          name: selected.name,
-          path: imagePath
+        selected = Utility.selectRandom(obj.arry);
+        item = {
+          name: selected,
+          path: ''
         };
-
-        // TODO: add same item checker before adding into the collection of items
         items.push(item);
 
       }
 
-      // prints information
-      $.each(items, function(idx){
-        var DOMelement = obj.element.children().children().eq(idx);
-        View.printInfo(DOMelement, this.name, this.path);
-      });
+    } else {
+
+      // collects information
+      for( var i = 0; i < obj.howMany; i++) {
+
+        selected = Utility.selectRandom(obj.arry);
+        var imagePath = Utility.grabImage(obj.url_info, selected.number, obj.url_info.portraits);
+        item = {
+          name: selected.name,
+          path: imagePath
+        };
+
+        // TODO: Write checker for repeats
+        items.push(item);
+
+      }
     }
+
+
+
+    // Print Item(s)
+    View.printInfoArry(items, obj.element);
 
   },
 
@@ -132,5 +126,15 @@ Utility = {
       path = info.url_paths.host + info.url_paths.game_data + dir.directory + arryId + '.jpg';
     }
     return path;
+  },
+
+  // checks collection for repeats
+  checkCollection: function(arry) {
+    var passed, checkedItem, checkedItems;
+    $.each(arry, function(idx) {
+
+    });
+    return passed;
   }
+
 };

@@ -461,18 +461,19 @@ info = {
         number:3005,
         name:"Atma's Impaler"
       },
-      {
-        number:3198,
-        name:"Augment: Death"
-      },
-      {
-        number:3197,
-        name:"Augment: Gravity"
-      },
-      {
-        number:3196,
-        name:"Augment: Power"
-      },
+      // only for viktor
+      // {
+      //   number:3198,
+      //   name:"Augment: Death"
+      // },
+      // {
+      //   number:3197,
+      //   name:"Augment: Gravity"
+      // },
+      // {
+      //   number:3196,
+      //   name:"Augment: Power"
+      // },
       {
         number:3093,
         name:"Avarice Blade"
@@ -489,10 +490,11 @@ info = {
         number:3144,
         name:"Bilgewater Cutlass"
       },
-      {
-        number:3166,
-        name:"Bonetooth Necklace"
-      },
+      // only for rengar
+      // {
+      //   number:3166,
+      //   name:"Bonetooth Necklace"
+      // },
       {
         number:3010,
         name:"Catalyst the Protector"
