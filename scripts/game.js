@@ -38,15 +38,34 @@ Controller = {
 
     // start game
     Controller.fetchBravery(Controller.drawCard);
+    Controller.printItems();
   },
 
   // sets listener
   fetchBravery: function(evnt) {
     evnt.click(function(){
+      // console.log($('.media-list'));
+      if ($('.media-list').hasClass('hidden')) {
+        $('.media-list')
+        .removeClass('hidden');
+      }
+
       $.each(Controller.objects, function(){
         Utility.collectInfo(this);
+
       });
     });
+  },
+
+  printItems: function() {
+    $('#printItems').click(function() {
+      $.each(info.items, function(){
+        $('.itemsArry').append(
+          '<img src="images/items/' + this.number + '.png" alt="" />'
+        );
+      });
+    });
+
   }
 
 };
@@ -56,9 +75,15 @@ View = {
   // reworking how it print info
   printInfoArry: function(arry, element) {
     $.each(arry, function(idx){
-      console.log('printing %o', this, idx, $(element).eq(idx));
+      // console.log('printing %o', this, idx, $(element).eq(idx));
       $(element + ' .media-body').eq(idx).children('.media-heading').empty().text(this.name);
-      if (element !== '') $(element + ' .media-body').eq(idx).children('.media-image').empty().text(this.path);
+      if (element !== '') {
+        // $(element + ' .media-body').eq(idx).children('.media-image').empty().text(this.path);
+        $(element + ' .media-body').eq(idx).children('div').empty().append(
+          // '<img class="media-object" src="http://deelay.me/1000?' + this.path +'" alt="' + this.name + '" />'
+          '<p >' + this.path + '</p>'
+        );
+      }
     });
   }
 

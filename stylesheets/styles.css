@@ -1,5 +1,9 @@
 /* Ultimate Bravery Styles outsite of twitter bootstrap */
 
+.hidden {
+  display:none;
+}
+
 .media-list {
   list-style-type: none;
   padding: 0;
