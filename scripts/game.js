@@ -59,6 +59,7 @@ Controller = {
 
   printItems: function() {
     $('#printItems').click(function() {
+      $('.itemsArry').empty();
       $.each(info.items, function(){
         $('.itemsArry').append(
           '<img src="images/items/' + this.number + '.png" alt="" />'
