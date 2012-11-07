@@ -19,9 +19,11 @@ Application uses JS objects to control the flow of the data. While image sprite 
 
 
 ## To Do's:
+- Add duplicate Item / Spell Checker
 - Build Hash / Deep Linkable Urls
 - Address 'name' undefined issue in game.js
 - Clean up how actual game content is rendered.
+
 
 
 ## Patch Data:
