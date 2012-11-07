@@ -218,11 +218,11 @@ info = {
         },
         {
           id: 11,
-          name: "master"
+          name: "master yi"
         },
         {
           id: 21,
-          name: "miss"
+          name: "miss fortune"
         },
         {
           id: 82,
