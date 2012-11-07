@@ -1,99 +1,215 @@
+.sprite {
+  display:block;
+  background-image: url(/images/sprite.png);
+  width: 64px;
+  height: 64px;
+}
 
+#champion .sprite {
+  width: 80px;
+  height: 80px;
+}
 
-/*--- CHAMPION LIST ---*/
-
-.Ahri {   background-position: 0 0; } 
-.Akali {   background-position: 0 0; } 
-.Alistar {   background-position: 0 0; } 
-.Amumu {   background-position: 0 0; } 
-.Anivia {   background-position: 0 0; } 
-.Annie {   background-position: 0 0; } 
-.Ashe {   background-position: 0 0; } 
-.Blitzcrank {   background-position: 0 0; } 
-.Brand {   background-position: 0 0; } 
-.Caitlyn {   background-position: 0 0; } 
-.Cassiopeia {   background-position: 0 0; } 
-.Chogath {   background-position: 0 0; } 
-.Corki {   background-position: 0 0; } 
-.Cryophoenix {   background-position: 0 0; } 
-.Dr.Mundo {   background-position: 0 0; } 
-.Evelynn {   background-position: 0 0; } 
-.Ezreal {   background-position: 0 0; } 
-.Fiddlesticks {   background-position: 0 0; } 
-.Fiora {   background-position: 0 0; } 
-.Fizz {   background-position: 0 0; } 
-.Galio {   background-position: 0 0; } 
-.Gangplank {   background-position: 0 0; } 
-.Garen {   background-position: 0 0; } 
-.Gragas {   background-position: 0 0; } 
-.Graves {   background-position: 0 0; } 
-.Heimerdinger {   background-position: 0 0; } 
-.Irelia {   background-position: 0 0; } 
-.Janna {   background-position: 0 0; } 
-.JarvanIV {   background-position: 0 0; } 
-.Jax {   background-position: 0 0; } 
-.Karma {   background-position: 0 0; } 
-.Karthus {   background-position: 0 0; } 
-.Kassadin {   background-position: 0 0; } 
-.Katarina {   background-position: 0 0; } 
-.Kayle {   background-position: 0 0; } 
-.Kennen {   background-position: 0 0; } 
-.KogMaw {   background-position: 0 0; } 
-.Leblanc {   background-position: 0 0; } 
-.LeeSin {   background-position: 0 0; } 
-.Leona {   background-position: 0 0; } 
-.Lulu {   background-position: 0 0; } 
-.Lux {   background-position: 0 0; } 
-.Malphite {   background-position: 0 0; } 
-.Malzahar {   background-position: 0 0; } 
-.Maokai {   background-position: 0 0; } 
-.MasterYi {   background-position: 0 0; } 
-.MissFortune {   background-position: 0 0; } 
-.Mordekaiser {   background-position: 0 0; } 
-.Morgana {   background-position: 0 0; } 
-.Nasus {   background-position: 0 0; } 
-.Nautilus {   background-position: 0 0; } 
-.Nidalee {   background-position: 0 0; } 
-.Nocturne {   background-position: 0 0; } 
-.Nunu {   background-position: 0 0; } 
-.Olaf {   background-position: 0 0; } 
-.Orianna {   background-position: 0 0; } 
-.Pantheon {   background-position: 0 0; } 
-.Poppy {   background-position: 0 0; } 
-.Rammus {   background-position: 0 0; } 
-.Renekton {   background-position: 0 0; } 
-.Riven {   background-position: 0 0; } .
-.Rumble {   background-position: 0 0; } 
-.Ryze {   background-position: 0 0; } 
-.Sejuani {   background-position: 0 0; } 
-.Shaco {   background-position: 0 0; } 
-.Shen {   background-position: 0 0; } 
-.Shyvana {   background-position: 0 0; } 
-.Singed {   background-position: 0 0; } 
-.Sion {   background-position: 0 0; } 
-.Sivir {   background-position: 0 0; } 
-.Skarner {   background-position: 0 0; } 
-.Sona {   background-position: 0 0; } 
-.Soraka {   background-position: 0 0; } 
-.Swain {   background-position: 0 0; } 
-.Talon {   background-position: 0 0; } 
-.Taric {   background-position: 0 0; } 
-.Teemo {   background-position: 0 0; } 
-.Tristana {   background-position: 0 0; } 
-.Trundle {   background-position: 0 0; } 
-.Tryndamere {   background-position: 0 0; } 
-.TwistedFate {   background-position: 0 0; } 
-.Twitch {   background-position: 0 0; } 
-.Udyr {   background-position: 0 0; } 
-.Urgot {   background-position: 0 0; } 
-.Vayne {   background-position: 0 0; } 
-.Veigar {   background-position: 0 0; } 
-.Viktor {   background-position: 0 0; } 
-.Vladimir {   background-position: 0 0; } 
-.Volibear {   background-position: 0 0; } 
-.Warwick {   background-position: 0 0; } 
-.Xerath {   background-position: 0 0; } 
-.XinZhao {   background-position: 0 0; } 
-.Yorick {   background-position: 0 0; } 
-.Ziggs {   background-position: 0 0; } 
-.Zilean {   background-position: 0 0; } 
+/*sprite positions*/
+.sprite.i1 { background-position: 0 0;}
+.sprite.i10 { background-position:-164px -164px;}
+.sprite.i101 { background-position:-410px -656px;}
+.sprite.i102 { background-position:-492px -656px;}
+.sprite.i103 { background-position:-574px -656px;}
+.sprite.i104 { background-position:-656px -656px;}
+.sprite.i105 { background-position: -738px 0px;}
+.sprite.i106 { background-position:-738px -82px;}
+.sprite.i107 { background-position:-738px -164px;}
+.sprite.i11 { background-position: -246px 0px;}
+.sprite.i110 { background-position:-738px -246px;}
+.sprite.i111 { background-position:-738px -328px;}
+.sprite.i112 { background-position:-738px -410px;}
+.sprite.i113 { background-position:-738px -492px;}
+.sprite.i114 { background-position:-738px -574px;}
+.sprite.i115 { background-position:-738px -656px;}
+.sprite.i119 { background-position: 0px -738px;}
+.sprite.i12 { background-position:-246px -82px;}
+.sprite.i120 { background-position:-82px -738px;}
+.sprite.i122 { background-position:-164px -738px;}
+.sprite.i126 { background-position:-246px -738px;}
+.sprite.i13 { background-position:-246px -164px;}
+.sprite.i131 { background-position:-328px -738px;}
+.sprite.i134 { background-position:-410px -738px;}
+.sprite.i14 { background-position: 0px -246px;}
+.sprite.i143 { background-position:-492px -738px;}
+.sprite.i15 { background-position:-82px -246px;}
+.sprite.i16 { background-position:-164px -246px;}
+.sprite.i17 { background-position:-246px -246px;}
+.sprite.i18 { background-position: -328px 0px;}
+.sprite.i19 { background-position:-328px -82px;}
+.sprite.i2 { background-position: -82px 0px;}
+.sprite.i20 { background-position:-328px -164px;}
+.sprite.i21 { background-position:-328px -246px;}
+.sprite.i22 { background-position: 0px -328px;}
+.sprite.i23 { background-position:-82px -328px;}
+.sprite.i24 { background-position:-164px -328px;}
+.sprite.i25 { background-position:-246px -328px;}
+.sprite.i26 { background-position:-328px -328px;}
+.sprite.i27 { background-position: -410px 0px;}
+.sprite.i28 { background-position:-410px -82px;}
+.sprite.i29 { background-position:-410px -164px;}
+.sprite.i3 { background-position: 0px -82px;}
+.sprite.i30 { background-position:-410px -246px;}
+.sprite.i3001 { background-position:-574px -738px;}
+.sprite.i3003 { background-position:-640px -738px;}
+.sprite.i3004 { background-position:-706px -738px;}
+.sprite.i3005 { background-position: -820px 0px;}
+.sprite.i3006 { background-position:-820px -66px;}
+.sprite.i3009 { background-position:-820px -132px;}
+.sprite.i3010 { background-position:-820px -198px;}
+.sprite.i3020 { background-position:-820px -264px;}
+.sprite.i3022 { background-position:-820px -330px;}
+.sprite.i3024 { background-position:-820px -396px;}
+.sprite.i3026 { background-position:-820px -462px;}
+.sprite.i3027 { background-position:-820px -528px;}
+.sprite.i3028 { background-position:-820px -594px;}
+.sprite.i3031 { background-position:-820px -660px;}
+.sprite.i3035 { background-position:-820px -726px;}
+.sprite.i3037 { background-position: 0px -820px;}
+.sprite.i3041 { background-position:-66px -820px;}
+.sprite.i3044 { background-position:-132px -820px;}
+.sprite.i3046 { background-position:-198px -820px;}
+.sprite.i3047 { background-position:-264px -820px;}
+.sprite.i3050 { background-position:-330px -820px;}
+.sprite.i3057 { background-position:-396px -820px;}
+.sprite.i3065 { background-position:-462px -820px;}
+.sprite.i3067 { background-position:-528px -820px;}
+.sprite.i3068 { background-position:-594px -820px;}
+.sprite.i3069 { background-position:-660px -820px;}
+.sprite.i3070 { background-position:-726px -820px;}
+.sprite.i3071 { background-position:-792px -820px;}
+.sprite.i3072 { background-position: -886px 0px;}
+.sprite.i3075 { background-position:-886px -66px;}
+.sprite.i3077 { background-position:-886px -132px;}
+.sprite.i3078 { background-position:-886px -198px;}
+.sprite.i3082 { background-position:-886px -264px;}
+.sprite.i3083 { background-position:-886px -330px;}
+.sprite.i3086 { background-position:-886px -396px;}
+.sprite.i3089 { background-position:-886px -462px;}
+.sprite.i3091 { background-position:-886px -528px;}
+.sprite.i3093 { background-position:-886px -594px;}
+.sprite.i3096 { background-position:-886px -660px;}
+.sprite.i3097 { background-position:-886px -726px;}
+.sprite.i3098 { background-position:-886px -792px;}
+.sprite.i3099 { background-position: 0px -886px;}
+.sprite.i31 { background-position:-410px -328px;}
+.sprite.i3100 { background-position:-66px -886px;}
+.sprite.i3101 { background-position:-132px -886px;}
+.sprite.i3102 { background-position:-198px -886px;}
+.sprite.i3105 { background-position:-264px -886px;}
+.sprite.i3106 { background-position:-330px -886px;}
+.sprite.i3108 { background-position:-396px -886px;}
+.sprite.i3109 { background-position:-462px -886px;}
+.sprite.i3110 { background-position:-528px -886px;}
+.sprite.i3111 { background-position:-594px -886px;}
+.sprite.i3114 { background-position:-660px -886px;}
+.sprite.i3115 { background-position:-726px -886px;}
+.sprite.i3116 { background-position:-792px -886px;}
+.sprite.i3117 { background-position:-858px -886px;}
+.sprite.i3123 { background-position: -952px 0px;}
+.sprite.i3124 { background-position:-952px -66px;}
+.sprite.i3126 { background-position:-952px -132px;}
+.sprite.i3128 { background-position:-952px -198px;}
+.sprite.i3132 { background-position:-952px -264px;}
+.sprite.i3134 { background-position:-952px -330px;}
+.sprite.i3135 { background-position:-952px -396px;}
+.sprite.i3136 { background-position:-952px -462px;}
+.sprite.i3138 { background-position:-952px -528px;}
+.sprite.i3140 { background-position:-952px -594px;}
+.sprite.i3141 { background-position:-952px -660px;}
+.sprite.i3142 { background-position:-952px -726px;}
+.sprite.i3143 { background-position:-952px -792px;}
+.sprite.i3144 { background-position:-952px -858px;}
+.sprite.i3145 { background-position: 0px -952px;}
+.sprite.i3146 { background-position:-66px -952px;}
+.sprite.i3152 { background-position:-132px -952px;}
+.sprite.i3154 { background-position:-198px -952px;}
+.sprite.i3155 { background-position:-264px -952px;}
+.sprite.i3156 { background-position:-330px -952px;}
+.sprite.i3157 { background-position:-396px -952px;}
+.sprite.i3158 { background-position:-462px -952px;}
+.sprite.i3165 { background-position:-528px -952px;}
+.sprite.i3170 { background-position:-594px -952px;}
+.sprite.i3172 { background-position:-660px -952px;}
+.sprite.i3173 { background-position:-726px -952px;}
+.sprite.i3174 { background-position:-792px -952px;}
+.sprite.i3178 { background-position:-858px -952px;}
+.sprite.i3180 { background-position:-924px -952px;}
+.sprite.i3181 { background-position: -1018px 0px;}
+.sprite.i3184 { background-position:-1018px -66px;}
+.sprite.i3185 { background-position:-1018px -132px;}
+.sprite.i3186 { background-position:-1018px -198px;}
+.sprite.i3187 { background-position:-1018px -264px;}
+.sprite.i3190 { background-position:-1018px -330px;}
+.sprite.i32 { background-position: 0px -410px;}
+.sprite.i3200 { background-position:-1018px -396px;}
+.sprite.i33 { background-position:-82px -410px;}
+.sprite.i34 { background-position:-164px -410px;}
+.sprite.i35 { background-position:-246px -410px;}
+.sprite.i36 { background-position:-328px -410px;}
+.sprite.i37 { background-position:-410px -410px;}
+.sprite.i38 { background-position: -492px 0px;}
+.sprite.i4 { background-position:-82px -82px;}
+.sprite.i40 { background-position:-492px -82px;}
+.sprite.i41 { background-position:-492px -164px;}
+.sprite.i42 { background-position:-492px -246px;}
+.sprite.i43 { background-position:-492px -328px;}
+.sprite.i44 { background-position:-492px -410px;}
+.sprite.i45 { background-position: 0px -492px;}
+.sprite.i48 { background-position:-82px -492px;}
+.sprite.i5 { background-position: -164px 0px;}
+.sprite.i50 { background-position:-164px -492px;}
+.sprite.i51 { background-position:-246px -492px;}
+.sprite.i53 { background-position:-328px -492px;}
+.sprite.i54 { background-position:-410px -492px;}
+.sprite.i55 { background-position:-492px -492px;}
+.sprite.i56 { background-position: -574px 0px;}
+.sprite.i58 { background-position:-574px -82px;}
+.sprite.i59 { background-position:-574px -164px;}
+.sprite.i6 { background-position:-164px -82px;}
+.sprite.i61 { background-position:-574px -246px;}
+.sprite.i62 { background-position:-574px -328px;}
+.sprite.i63 { background-position:-574px -410px;}
+.sprite.i67 { background-position:-574px -492px;}
+.sprite.i68 { background-position: 0px -574px;}
+.sprite.i69 { background-position:-82px -574px;}
+.sprite.i72 { background-position:-164px -574px;}
+.sprite.i74 { background-position:-246px -574px;}
+.sprite.i75 { background-position:-328px -574px;}
+.sprite.i76 { background-position:-410px -574px;}
+.sprite.i77 { background-position:-492px -574px;}
+.sprite.i78 { background-position:-574px -574px;}
+.sprite.i79 { background-position: -656px 0px;}
+.sprite.i8 { background-position: 0px -164px;}
+.sprite.i80 { background-position:-656px -82px;}
+.sprite.i81 { background-position:-656px -164px;}
+.sprite.i82 { background-position:-656px -246px;}
+.sprite.i83 { background-position:-656px -328px;}
+.sprite.i84 { background-position:-656px -410px;}
+.sprite.i85 { background-position:-656px -492px;}
+.sprite.i86 { background-position:-656px -574px;}
+.sprite.i9 { background-position:-82px -164px;}
+.sprite.i90 { background-position: 0px -656px;}
+.sprite.i9001 { background-position:-1018px -462px;}
+.sprite.i9002 { background-position:-1018px -528px;}
+.sprite.i9003 { background-position:-1018px -594px;}
+.sprite.i9004 { background-position:-1018px -660px;}
+.sprite.i9005 { background-position:-1018px -726px;}
+.sprite.i9006 { background-position:-1018px -792px;}
+.sprite.i9007 { background-position:-1018px -858px;}
+.sprite.i9008 { background-position:-1018px -924px;}
+.sprite.i9009 { background-position: 0px -1018px;}
+.sprite.i9010 { background-position:-66px -1018px;}
+.sprite.i9011 { background-position:-132px -1018px;}
+.sprite.i9012 { background-position:-198px -1018px;}
+.sprite.i9013 { background-position:-264px -1018px;}
+.sprite.i9014 { background-position:-330px -1018px;}
+.sprite.i91 { background-position:-82px -656px;}
+.sprite.i92 { background-position:-164px -656px;}
+.sprite.i96 { background-position:-246px -656px;}
+.sprite.i98 { background-position:-328px -656px;}

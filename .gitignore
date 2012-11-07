@@ -1,2 +1,7 @@
 .DS_store
-images/items/~archive/
+images/items/
+images/champions/
+images/spells/
+.sprt
+.pshs
+~archive/

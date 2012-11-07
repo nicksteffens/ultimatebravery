@@ -38,7 +38,6 @@ Controller = {
 
     // start game
     Controller.fetchBravery(Controller.drawCard);
-    Controller.printItems();
   },
 
   // sets listener
@@ -55,18 +54,6 @@ Controller = {
 
       });
     });
-  },
-
-  printItems: function() {
-    $('#printItems').click(function() {
-      $('.itemsArry').empty();
-      $.each(info.items, function(){
-        $('.itemsArry').append(
-          '<img src="images/items/' + this.number + '.png" alt="" />'
-        );
-      });
-    });
-
   }
 
 };
@@ -77,13 +64,16 @@ View = {
   printInfoArry: function(arry, element) {
     $.each(arry, function(idx){
       // console.log('printing %o', this, idx, $(element).eq(idx));
-      $(element + ' .media-body').eq(idx).children('.media-heading').empty().text(this.name);
+      $(element + ' .media').eq(idx).children('.media-body').children('.media-heading').empty().text(this.name);
       if (element !== '') {
         // $(element + ' .media-body').eq(idx).children('.media-image').empty().text(this.path);
-        $(element + ' .media-body').eq(idx).children('div').empty().append(
-          // '<img class="media-object" src="http://deelay.me/1000?' + this.path +'" alt="' + this.name + '" />'
-          '<p >' + this.path + '</p>'
-        );
+        // $(element + ' .media-body').eq(idx).children('div').empty().append(
+        //   // '<img class="media-object" src="http://deelay.me/1000?' + this.path +'" alt="' + this.name + '" />'
+        //   '<p >' + this.path + '</p>'
+        // );
+        $(element + ' .media').eq(idx).children('.pull-left').children('.media-object').attr('class', '').addClass('media-object sprite i' + this.id);
+
+
       }
     });
   }
@@ -105,44 +95,36 @@ Utility = {
         selected = null,
         item = null;
 
-    // check if object is spells
-    if(obj.arry == info.spells) {
-      for(var i = 0; i < obj.howMany; i++) {
-        selected = Utility.selectRandom(obj.arry);
-        item = {
-          name: selected,
-          path: ''
-        };
-        items.push(item);
-
-      }
-
-    } else {
-
       // collects information
       for( var i = 0; i < obj.howMany; i++) {
 
         selected = Utility.selectRandom(obj.arry);
-        var imagePath = Utility.grabImage(obj.url_info, selected.number, obj.url_info.portraits);
+        // var imagePath = Utility.grabImage(obj.url_info, selected.id, obj.url_info.portraits);
         item = {
           name: selected.name,
-          path: imagePath
+          id: selected.id
         };
 
         // TODO: Write checker for repeats
-        items.push(item);
+        if ( $.inArray(item, items) < 0) {
+
+          items.push(item);
+        } else {
+          console.log(
+            'Error \n%o is already in %o', item, items
+          );
+        }
+
 
       }
-    }
-
-
 
     // Print Item(s)
     View.printInfoArry(items, obj.element);
 
   },
 
-  // constructs image paths
+  // constructs image paths from na.leagueoflegends.com
+  // NOTE: Avoid as leagueoflegends.com block too many image requests
   grabImage: function(dir, arryId, type) {
     var path;
     // example: http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.146/content/champion/icons/101.jpg
@@ -152,15 +134,7 @@ Utility = {
       path = info.url_paths.host + info.url_paths.game_data + dir.directory + arryId + '.jpg';
     }
     return path;
-  },
-
-  // checks collection for repeats
-  checkCollection: function(arry) {
-    var passed, checkedItem, checkedItems;
-    $.each(arry, function(idx) {
-
-    });
-    return passed;
   }
+
 
 };
