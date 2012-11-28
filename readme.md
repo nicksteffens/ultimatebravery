@@ -28,3 +28,6 @@ Application uses JS objects to control the flow of the data. While image sprite 
 
 ## Patch Data:
 [Shadow Isles - 10/26/2012](http://promo.leagueoflegends.com/shadow-isles/en.html)
+
+## Needed Update:
+I need to implement Zed Patch in preparation for season 3.
